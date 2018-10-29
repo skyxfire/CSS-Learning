@@ -19,18 +19,15 @@
       <div>
         <button type="button" class="bindButton">绑定</button>
       </div>
-      <div class="changeLogin" @click="driverLogin">司机账号登录</div>
+      <div @click="userLogin">返回用户名密码登录</div>
     </div>
 
   </div>
 </template>
 
 <script>
-
-  import { TopTips } from 'we-vue'
-
     export default {
-        name: "Login",
+        name: "DriverLogin",
         data() {
           return {
             userName: "",
@@ -47,8 +44,8 @@
           }
         },
         methods: {
-          driverLogin() {
-            this.$router.push("DriverLogin")
+          userLogin() {
+            this.$router.push("Login")
           }
         }
     }
@@ -98,11 +95,6 @@
     font-size: 16px;
     border-radius: 4px;
     outline: 0;
-  }
-
-  .changeLogin {
-    text-align: left;
-    color: #000099;
   }
 
 </style>
