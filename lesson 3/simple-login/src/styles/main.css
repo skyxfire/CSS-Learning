@@ -1,0 +1,53 @@
+body {
+    color: #1d1d26;
+    font-family: "Microsoft YaHei UI Light";
+  }
+
+*{
+margin: 0;
+padding: 0;
+-webkit-tap-highlight-color: transparent;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+*,a:focus,input:focus {
+  outline: 0;
+}
+
+img,input {
+  vertical-align: middle;
+}
+checkbox,select {
+  -webkit-appearance: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+li,ol,ul {
+  list-style: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+a {
+  text-decoration: none;
+}
+a:active {
+  opacity: 0.7;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}

@@ -1,0 +1,104 @@
+.content {
+    margin: 60px 30px;
+    text-align: left;
+  }
+
+.title {
+  font-size: 24px;
+  color: #303133;
+}
+
+.input {
+  border-bottom: 1px solid #f0f0f0;
+  margin-top: 26px;
+}
+
+.input label {
+  color: #C7C7CC;
+  font-size: 12px;
+}
+
+.input .inputTitle {
+  height: 18px;
+}
+
+.input input {
+  color: #1d1d26;
+  margin: 12px 0;
+  line-height: 22px;
+  width: 100%;
+  font-size: 18px;
+  outline: 0;
+  border-width: 0;
+}
+
+.bindButton {
+  margin-top: 58px;
+  padding: 10px 0;
+  width: 80%;
+  background-color: #FF7F41;
+  color: #FFF;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: 0;
+  border:0;
+}
+
+.bindButton:hover {
+  background-color: #E67339;
+}
+
+.changeLogin {
+  position: absolute;
+  bottom:30px;
+  width: 100%;
+  color: #FF7F41;
+  font-size: 12px;
+}
+
+.thirdNum {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  border-top:1px solid #f0f0f0;
+}
+
+.accountText {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  padding: 0 10px;
+  margin-left: -52px;
+  color: #999999;
+  font-size: 12px;
+  background-color: #FFF;
+}
+
+.thirdNum ul{
+  overflow: hidden;
+}
+
+.thirdNum li{
+  width: 50%;
+  float: left;
+  padding-top: 30px;
+  list-style-type: none;
+}
+
+.thirdNum li i {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+.thirdNum li .alipay-login {
+  background: url("../assets/logo-alipay-lightgray.png") no-repeat;
+  background-size: 100%;
+  margin:0 10px 0 auto;
+}
+
+.thirdNum li .wechat-login {
+  background: url("../assets/logo-wechat-lightgray.png") no-repeat;
+  background-size: 100%;
+  margin:0 auto 0 10px;
+}
