@@ -40,9 +40,10 @@ del {
 
 a {
   text-decoration: none;
+  color: #FF7F41;
 }
-a:active {
-  opacity: 0.7;
+a:hover,a:active {
+  opacity: 0.8;
 }
 
 .fl {
@@ -50,4 +51,34 @@ a:active {
 }
 .fr {
   float: right;
+}
+
+button.weui-btn {
+  margin-top: 40px!important;
+  padding: 10px 0;
+  width: 80%;
+  line-height:normal;
+  background-color: #FF7F41;
+  color: #FFF;
+  font-size: 16px;
+  border-radius: 20px;
+  box-shadow:0px 5px 10px 0px rgba(255,127,65,0.2);
+}
+
+button.weui-btn:hover{
+  opacity: 0.8;
+}
+
+.weui-btn_disabled.weui-btn_default{
+  background-color: #C7C7CC;
+  color:#fff;
+  box-shadow:0px 5px 10px 0px rgba(199,199,204,0.2);
+}
+
+button.weui-btn:disabled{
+  opacity: 1;
+}
+
+.weui-btn_primary:not(.weui-btn_disabled):active {
+  background-color: #FF7F41;
 }

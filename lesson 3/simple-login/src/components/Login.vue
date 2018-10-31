@@ -4,13 +4,12 @@
       <div class="title">
         <label>Hi<br>欢迎加入</label>
       </div>
-      <Sms v-model="code"></Sms>
         <!-- 手机号 begin-->
       <div  class="input">
         <div class="inputTitle">
-          <label v-show="isUserNameExist">手机号</label>
+          <label v-show="isUserNameExist">请输入手机号</label>
         </div>
-        <input type="number" @input="verifyUserName" v-model="userName" placeholder="请输入手机号"/>
+        <input type="number" @input="verifyUserName" v-model.trim="userName" placeholder="请输入手机号"/>
       </div>
         <!-- 手机号 end-->
         <!-- 密码 begin
@@ -22,7 +21,9 @@
       </div>
         密码 end-->
         <div align="center">
-          <button type="button" class="bindButton" >获取验证码</button>
+          <wv-button type="default" disabled v-show="isDisabled">下一步</wv-button>
+          <wv-button type="primary" @click="logincode" v-show="isActive">下一步</wv-button>
+          <p class="consentclause">点击下一步即代表同意<a href="javascript()">《服务协议》</a></p>
         </div>         
      </div>
      <!-- <div class="changeLogin" @click="driverLogin">司机账号登录</div>   -->
@@ -37,13 +38,14 @@
 </template>
 
 <script>
-  import Sms from 'ofcold-security-code'
   import { TopTips } from 'we-vue'
 
     export default {
         name: "Login",
         data() {
           return {
+            isActive: false,
+            isDisabled: true,
             userName: "",
             password: "",
             code: ''
@@ -59,37 +61,29 @@
           }
         },
         methods: {
-          driverLogin() {
-            this.$router.push("DriverLogin")
+          logincode() {
+            this.$router.push("Logincode")
           },
+         
           verifyUserName() {
             if (this.userName.length > 11) {
               TopTips({ message: '请正确输入手机号', duration: 2000})
             } else if (this.userName.length == 0) {
               TopTips({ message: '手机号不能为空', duration: 2000})
             }
-          }
-        },
-        components: {
-          Sms
-        }       
+            if (this.userName.length == 0 ) {
+                this.isActive = false
+                this.isDisabled = true
+              } else {
+                this.isActive = true
+                this.isDisabled = false
+              }
+           }
+        }      
     }
 </script>
 
 <style>
   @import '../styles/main.css';
   @import '../styles/login.css';
-
-    .ofcold__security-code-wrapper .ofcold__security-code-field{
-      margin-right: 10px!important;
-  }
-
-  .ofcold__security-code-wrapper .ofcold__security-code-field .form-control{
-      border: 1px solid #c7c7c7;
-  }
-
-  .ofcold__security-code-wrapper .ofcold__security-code-field:nth-child(3) {
-      margin-right: 10px!important;
-  }
-
 </style>

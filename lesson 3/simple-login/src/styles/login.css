@@ -1,3 +1,7 @@
+.text15 {
+  font-size: 15px;
+}
+
 .content {
     margin: 60px 30px;
     text-align: left;
@@ -6,11 +10,11 @@
 .title {
   font-size: 24px;
   color: #303133;
+  margin-bottom: 56px;
 }
 
 .input {
   border-bottom: 1px solid #f0f0f0;
-  margin-top: 26px;
 }
 
 .input label {
@@ -32,35 +36,12 @@
   border-width: 0;
 }
 
-.bindButton {
-  margin-top: 58px;
-  padding: 10px 0;
-  width: 80%;
-  background-color: #FF7F41;
-  color: #FFF;
-  font-size: 16px;
-  border-radius: 20px;
-  outline: 0;
-  border:0;
-}
-
-.bindButton:hover {
-  background-color: #E67339;
-}
-
 .changeLogin {
   position: absolute;
   bottom:30px;
   width: 100%;
   color: #FF7F41;
   font-size: 12px;
-}
-
-.thirdNum {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  border-top:1px solid #f0f0f0;
 }
 
 .accountText {
@@ -74,6 +55,13 @@
   background-color: #FFF;
 }
 
+.thirdNum {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  border-top:1px solid #f0f0f0;
+}
+
 .thirdNum ul{
   overflow: hidden;
 }
@@ -81,8 +69,7 @@
 .thirdNum li{
   width: 50%;
   float: left;
-  padding-top: 30px;
-  list-style-type: none;
+  padding-top: 25px;
 }
 
 .thirdNum li i {
@@ -101,4 +88,10 @@
   background: url("../assets/logo-wechat-lightgray.png") no-repeat;
   background-size: 100%;
   margin:0 auto 0 10px;
+}
+
+.consentclause {
+  color: #999999;
+  font-size: 12px;
+  padding-top: 15px;
 }
