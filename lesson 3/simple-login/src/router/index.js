@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import DriverLogin from '@/components/DriverLogin'
-import Logincode from '@/components/Logincode'
+import CodeVerify from '@/components/CodeVerify'
 
 Vue.use(Router)
 
@@ -24,9 +24,9 @@ export default new Router({
       component: DriverLogin
     },
     {
-      path: '/logincode',
-      name: 'Logincode',
-      component: Logincode
+      path: '/CodeVerify',
+      name: 'CodeVerify',
+      component: CodeVerify
     }  
   ]
 })

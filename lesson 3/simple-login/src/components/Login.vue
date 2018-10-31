@@ -22,7 +22,7 @@
         密码 end-->
         <div align="center">
           <wv-button type="default" disabled v-show="isDisabled">下一步</wv-button>
-          <wv-button type="primary" @click="logincode" v-show="isActive">下一步</wv-button>
+          <wv-button type="primary" @click="toCodeVerify" v-show="isActive">下一步</wv-button>
           <p class="consentclause">点击下一步即代表同意<a href="javascript()">《服务协议》</a></p>
         </div>         
      </div>
@@ -61,8 +61,8 @@
           }
         },
         methods: {
-          logincode() {
-            this.$router.push("Logincode")
+          toCodeVerify() {
+            this.$router.push("CodeVerify")
           },
          
           verifyUserName() {
