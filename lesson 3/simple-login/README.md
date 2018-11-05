@@ -5,6 +5,9 @@
 ## Build Setup
 
 ``` bash
+# first time install dependencies we-vue and ofcold-security-code
+npm install --save ofcold-security-code we-vue vue-style-loader css-loader sass-loader node-sass
+
 # install dependencies
 npm install
 
