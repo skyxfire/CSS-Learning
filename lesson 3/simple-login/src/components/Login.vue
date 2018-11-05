@@ -10,7 +10,7 @@
           <label v-show="isUserNameExist">请输入手机号</label>
         </div>
         <span style="display: inline-block; width: 100%;">
-          <input type="number" @input="verifyUserName" v-model.trim="userName" placeholder="请输入手机号"/>
+          <input type="phone" maxlength="13" @input="verifyUserName" v-model.trim="userName" placeholder="请输入手机号"/>
           <span class="weui-icon-clear" v-show="userName.length > 0" @click="resetUserName"></span>
         </span>
       </div>
@@ -66,7 +66,8 @@
         methods: {
           toCodeVerify() {
             let reg = /^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/;
-            if (!reg.test(this.userName)) {
+            let phone = this.userName.replace(/\s/g, '')
+            if (!reg.test(phone)) {
               TopTips({ message: '请正确输入手机号', duration: 2000})
             } else {
               this.$router.push("CodeVerify")
@@ -74,11 +75,6 @@
           },
          
           verifyUserName() {
-            if (this.userName.length > 11) {
-              TopTips({ message: '请正确输入手机号', duration: 2000})
-            } else if (this.userName.length == 0) {
-              TopTips({ message: '手机号不能为空', duration: 2000})
-            }
             if (this.userName.length == 0 ) {
                 this.isActive = false
                 this.isDisabled = true
@@ -90,7 +86,12 @@
            resetUserName() {
              this.userName = ""
            }
-        }      
+        },
+        watch: {
+          userName(newValue, oldValue) { // 监听
+          this.userName = newValue.length > oldValue.length ? newValue.replace(/\s/g, '').replace(/(\d{3})(\d{0,4})(\d{0,4})/, '$1 $2 $3') : this.userName.trim()
+      }
+    }      
     }
 </script>
 
