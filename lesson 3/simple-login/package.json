@@ -10,7 +10,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "jshint": "^2.9.6",
     "node-sass": "^4.10.0",
     "ofcold-security-code": "^1.0.10",
     "sass-loader": "^7.1.0",

@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import DriverLogin from '@/components/DriverLogin'
 import CodeVerify from '@/components/CodeVerify'
-import Index from '@/components/Index'
 
 Vue.use(Router)
 
@@ -28,11 +26,6 @@ export default new Router({
       path: '/CodeVerify',
       name: 'CodeVerify',
       component: CodeVerify
-    },
-    {
-      path: '/Index',
-      name: 'Index',
-      component: Index
-    }  
+    }
   ]
 })
