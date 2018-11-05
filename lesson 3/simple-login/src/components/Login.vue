@@ -9,7 +9,10 @@
         <div class="inputTitle">
           <label v-show="isUserNameExist">请输入手机号</label>
         </div>
-        <input type="number" @input="verifyUserName" v-model.trim="userName" placeholder="请输入手机号"/>
+        <span style="display: inline-block; width: 100%;">
+          <input type="number" @input="verifyUserName" v-model.trim="userName" placeholder="请输入手机号"/>
+          <span class="weui-icon-clear" v-show="userName.length > 0" @click="resetUserName"></span>
+        </span>
       </div>
         <!-- 手机号 end-->
         <!-- 密码 begin
@@ -62,7 +65,12 @@
         },
         methods: {
           toCodeVerify() {
-            this.$router.push("CodeVerify")
+            let reg = /^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/;
+            if (!reg.test(this.userName)) {
+              TopTips({ message: '请正确输入手机号', duration: 2000})
+            } else {
+              this.$router.push("CodeVerify")
+            }
           },
          
           verifyUserName() {
@@ -78,6 +86,9 @@
                 this.isActive = true
                 this.isDisabled = false
               }
+           },
+           resetUserName() {
+             this.userName = ""
            }
         }      
     }
