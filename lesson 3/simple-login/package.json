@@ -10,8 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "ajv": "^6.5.4",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.10.0",
     "ofcold-security-code": "^1.0.10",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.2",
