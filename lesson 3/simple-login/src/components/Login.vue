@@ -23,7 +23,7 @@
         <div align="center">
           <wv-button type="default" disabled v-show="isDisabled">下一步</wv-button>
           <wv-button type="primary" @click="toCodeVerify" v-show="isActive">下一步</wv-button>
-          <p class="consentclause">点击下一步即代表同意<a href="javascript()">《服务协议》</a></p>
+          <p class="consentclause">点击下一步即代表同意<a href="#">《服务协议》</a></p>
         </div>         
      </div>
      <!-- <div class="changeLogin" @click="driverLogin">司机账号登录</div>   -->

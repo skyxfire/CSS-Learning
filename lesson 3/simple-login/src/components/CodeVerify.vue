@@ -2,13 +2,13 @@
   <div>
     <div class="content">
       <div class="title" align="center">
-        <label>激活您的账号<p class="text15">一条包含验证码的手机短信已发送至<b class="text24">137 **** **23</b>请在此处输入验证码：</p></label>
+        <label>绑定您的账号<p class="text15">一条包含验证码的手机短信已发送至<b class="text24">137 **** **23</b>请在此处输入验证码：</p></label>
       </div>
        <!-- 验证码 begin-->
       <Sms v-model="code"></Sms>
       <!-- 验证码 end-->
       <div align="center">
-        <wv-button type="primary" @click="verifySuccess">确定</wv-button>
+        <wv-button type="primary" @click="toIndex">确定</wv-button>
        
         <p class="consentclause">没有收到手机短信?<a @click="countDown">{{content}}</a></p>
       </div>         
@@ -46,8 +46,9 @@
           }
         },
         methods: {
-          login() {
-            this.$router.push("Login")
+          toIndex() {
+            Toast.success({ message: '绑定成功', duration: 2000}) 
+            this.$router.push("Index")
           },
 
           countDown () {
@@ -67,7 +68,7 @@
             },
 
           verifySuccess() {
-              Toast.success({ message: '激活成功', duration: 2000})     
+                  
            }
         },
         components: {
