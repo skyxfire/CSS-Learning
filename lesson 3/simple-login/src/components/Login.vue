@@ -9,9 +9,9 @@
         <div class="inputTitle">
           <label v-show="isUserNameExist">请输入手机号</label>
         </div>
-        <span style="display: inline-block; width: 100%;">
+        <span style="display: inline-block;position: relative;width: 100%;">
           <input type="phone" maxlength="13" @input="verifyUserName" v-model.trim="userName" placeholder="请输入手机号"/>
-          <span class="weui-icon-clear" v-show="userName.length > 0" @click="resetUserName"></span>
+          <span class="weui-icon-clear" style="position: absolute;  right: 0; top: 50%; margin-top: -7px;" v-show="userName.length > 0" @click="resetUserName"></span>
         </span>
       </div>
         <!-- 手机号 end-->

@@ -48,7 +48,7 @@
         methods: {
           toIndex() {
             Toast.success({ message: '绑定成功', duration: 2000}) 
-            this.$router.push("Index")
+            this.$router.push("HomePage")
           },
 
           countDown () {
