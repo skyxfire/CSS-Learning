@@ -1,0 +1,11 @@
+.ofcold__security-code-wrapper .ofcold__security-code-field{
+  margin-right: 10px!important;
+}
+
+.ofcold__security-code-wrapper .ofcold__security-code-field .form-control{
+  border: 1px solid #c7c7c7;
+}
+
+.ofcold__security-code-wrapper .ofcold__security-code-field:nth-child(3) {
+  margin-right: 10px!important;
+}

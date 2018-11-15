@@ -47,22 +47,22 @@
         },
         methods: {
           toIndex() {
-            Toast.success({ message: '绑定成功', duration: 2000}) 
+            Toast.success({ message: '绑定成功', duration: 2000});
             this.$router.push("HomePage")
           },
 
           countDown () {
-            if (this.isCounting == true) { return }
-            this.isCounting = true
-            this.content = this.totalTime + 's' //这里解决60秒不见了的问题
+            if (this.isCounting === true) { return }
+            this.isCounting = true;
+            this.content = this.totalTime + 's'; //这里解决60秒不见了的问题
             let clock = window.setInterval(() => {//setInterval定时器
-              this.totalTime--
-              this.content = this.totalTime + 's'
+              this.totalTime--;
+              this.content = this.totalTime + 's';
               if (this.totalTime < 0) {     //当倒计时小于0时清除定时器
-                window.clearInterval(clock)
-                this.content = '重新发送'
-                this.totalTime = 60
-                this.isCounting = false
+                window.clearInterval(clock);
+                this.content = '重新发送';
+                this.totalTime = 60;
+                this.isCounting = false;
                 }
             },1000)
             },

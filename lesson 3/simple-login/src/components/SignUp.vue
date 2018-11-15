@@ -43,56 +43,56 @@
 <script>
   import { TopTips } from 'we-vue'
 
-    export default {
-        name: "Login",
-        data() {
-          return {
-            isActive: false,
-            isDisabled: true,
-            userName: "",
-            password: "",
-            code: ''
-          }
-        },
-        computed: {
-          isUserNameExist: function() {
-            return this.userName.length > 0
-          },
-
-          isPasswordExist: function() {
-            return this.password.length > 0
-          }
-        },
-        methods: {
-          toCodeVerify() {
-            let reg = /^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/;
-            let phone = this.userName.replace(/\s/g, '')
-            if (!reg.test(phone)) {
-              TopTips({ message: '请正确输入手机号', duration: 2000})
-            } else {
-              this.$router.push("CodeVerify")
-            }
-          },
-         
-          verifyUserName() {
-            if (this.userName.length == 0 ) {
-                this.isActive = false
-                this.isDisabled = true
-              } else {
-                this.isActive = true
-                this.isDisabled = false
-              }
-           },
-           resetUserName() {
-             this.userName = ""
-           }
-        },
-        watch: {
-          userName(newValue, oldValue) { // 监听
-          this.userName = newValue.length > oldValue.length ? newValue.replace(/\s/g, '').replace(/(\d{3})(\d{0,4})(\d{0,4})/, '$1 $2 $3') : this.userName.trim()
+  export default {
+    name: "SignUp",
+    data() {
+      return {
+        isActive: false,
+        isDisabled: true,
+        userName: "",
+        password: "",
+        code: ''
       }
-    }      
+    },
+    computed: {
+      isUserNameExist: function() {
+        return this.userName.length > 0
+      },
+
+      isPasswordExist: function() {
+        return this.password.length > 0
+      }
+    },
+    methods: {
+      toCodeVerify() {
+        let reg = /^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/;
+        let phone = this.userName.replace(/\s/g, '');
+        if (!reg.test(phone)) {
+          TopTips({ message: '请正确输入手机号', duration: 2000});
+        } else {
+          this.$router.push("CodeVerify");
+        }
+      },
+
+      verifyUserName() {
+        if (this.userName.length == 0 ) {
+          this.isActive = false
+          this.isDisabled = true
+        } else {
+          this.isActive = true
+          this.isDisabled = false
+        }
+      },
+      resetUserName() {
+        this.userName = ""
+      }
+    },
+    watch: {
+      userName(newValue, oldValue) { // 监听
+        this.userName = newValue.length > oldValue.length ? newValue.replace(/\s/g, '').replace(/(\d{3})(\d{0,4})(\d{0,4})/, '$1 $2 $3') : this.userName.trim()
+      }
     }
+  }
 </script>
 
 <style>

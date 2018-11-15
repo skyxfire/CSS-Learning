@@ -14,11 +14,11 @@
 .title {
   font-size: 24px;
   color: #303133;
-  margin-bottom: 56px;
 }
 
 .input {
   border-bottom: 1px solid #f0f0f0;
+  margin-top: 30px;
 }
 
 .input label {
@@ -57,6 +57,20 @@
   color: #999999;
   font-size: 12px;
   background-color: #FFF;
+}
+.signInSupport ul {
+  text-align: center;
+}
+.signInSupport li {
+  color: #FF7F41;
+  display: inline-block;
+  padding: 0 10px;
+  margin: 20px 0;
+  font-size: 12px;
+}
+
+.signInSupport li:first-of-type {
+  border-right: solid 1px #ff7f41;
 }
 
 .thirdNum {
@@ -102,4 +116,51 @@
 
 .consentclause a{
   padding-left: 5px;
+}
+
+.subtitle ol li {
+  font-size: 12px;
+  display: inline-block;
+  list-style-type: none;
+  counter-increment: item;
+  color: #999;
+}
+
+.subtitle ol li:before {
+  content: counter(item)". ";
+  color: #999;
+}
+
+.subtitle ol .finished {
+  background: url("../assets/icon-ok-round-yellow.png") 0 center / 12px 12px no-repeat;
+  padding-left: 15px;
+}
+
+.subtitle ol .finished:before {
+  content: "";
+}
+
+.subtitle ol li:after {
+  content: " —";
+  color: #999;
+}
+
+.subtitle ol li:last-of-type:after {
+  content: "";
+}
+
+.subtitle ol .selected {
+  color: #666;
+}
+
+.subtitle ol .finished {
+  color: #666;
+}
+
+.subtitle ol .selected:after {
+  color: #666;
+}
+
+.subtitle ol .finished:after {
+  color: #666;
 }
