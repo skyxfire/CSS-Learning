@@ -1,19 +1,16 @@
 <template>
   <div id="app">
     <!--<img src="./assets/logo.png">-->
-    <LandscapeDownload/>
+    <CompactUpgrade/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import LandscapeDownload from './components/LandscapeDownload'
-
+import CompactUpgrade from './components/CompactUpgrade'
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    LandscapeDownload
+    CompactUpgrade
   }
 }
 </script>
