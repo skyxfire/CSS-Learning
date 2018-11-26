@@ -3,7 +3,7 @@
     <div class="HolyGrail-Left">
       <div class="logo">
         <img src="../assets/logo.png"/>
-        <p class="heading">联合利华 看板</p>
+        <h1 class="heading">联合利华 看板</h1>
       </div>
       <div class="svg-box">
         <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
@@ -17,9 +17,9 @@
             </path>
           </defs>
           <g class="parallax">
-            <use xlink:href="#gentle-wave" x="50" y="0" fill="rgba(255,255,255,.5)"></use>
-            <use xlink:href="#gentle-wave" x="50" y="3" fill="rgba(255,255,255,.5)"></use>
-            <use xlink:href="#gentle-wave" x="50" y="6" fill="rgba(255,255,255,.5)"></use>
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="rgba(255,255,255,.7)"></use>
+            <use xlink:href="#gentle-wave" x="50" y="3" fill="rgba(255,255,255,.7)"></use>
+            <use xlink:href="#gentle-wave" x="50" y="6" fill="rgba(255,255,255,.7)"></use>
           </g>
         </svg>
       </div>
@@ -30,7 +30,7 @@
         <div class="double-bounce2"></div>
       </div>
       <div class="subContent">
-        <p>{{downloadContent}}</p>
+        <h3>{{downloadContent}}</h3>
         <a class="downloadBtn" @click="pressedDownload" v-show="!isDownloading" :href="downloadUrl"><i></i><span>Download</span></a>
         <p style="margin-top: 2em;"v-show="isDownloading">请点击Home键查看App下载情况</p>
       </div>
@@ -84,8 +84,10 @@
 
   .HolyGrail .logo {
     /*top: 50%;*/
-    transform: translateY(50%);
-    -webkit-transform: translateY(50%);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    -webkit-transform: translateY(-60%);
   }
 
   .HolyGrail-Left img {
@@ -102,33 +104,36 @@
 
   .HolyGrail-Right .spinner {
     position: absolute;
-    bottom: 5em;
+    bottom: 2em;
     left: 0;
     right: 0;
   }
 
   .HolyGrail-Right .subContent {
-    transform: translateY(50%);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
   }
 
-  .HolyGrail-Right p, .HolyGrail-Right a {
+  .HolyGrail-Right a {
 
     font-family: sans-serif;
     font-weight: 500;
     font-size: 1.2em;
   }
 
-  .HolyGrail-Right p {
+  .HolyGrail-Right p, .HolyGrail-Right h3 {
     color: #009;
   }
 
   .HolyGrail-Right a {
     color: white;
 
-    padding: 0.5em;
+    padding: 0.5em 2em;
     background: #009;
     display: block;
-    margin: 2em 3em;
+    margin: 2em 1em 0;
     border-radius: 1.3em;
     text-decoration: none;
   }
