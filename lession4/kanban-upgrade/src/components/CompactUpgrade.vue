@@ -86,6 +86,8 @@
     /*top: 50%;*/
     position: absolute;
     top: 50%;
+    left: 0;
+    right: 0;
     transform: translateY(-60%);
     -webkit-transform: translateY(-60%);
   }
