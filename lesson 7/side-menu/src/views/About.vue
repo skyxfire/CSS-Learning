@@ -3,26 +3,47 @@
     <mu-button @click="open = true" color="primary">Open Menu</mu-button>
     <mu-drawer :open.sync="open" :docked="docked" :right="position === 'right'" :width="350">
       <div class="outlook-drawer" style="height: 100vh">
-        <div class="account-bar"></div>
+        <div class="account-bar">
+          <div class="account-header">
+            <mu-button icon color="primary">
+              <mu-icon value="grade"></mu-icon>
+            </mu-button>
+            <mu-button icon color="primary">
+              <mu-icon value="grade"></mu-icon>
+            </mu-button>
+            <mu-button icon color="teal">
+              <mu-icon value="add"></mu-icon>
+            </mu-button>
+          </div>
+          <div class="account-bottom">
+            <mu-button icon color="gray">
+              <mu-icon value="help_outline"></mu-icon>
+            </mu-button>
+            <mu-button icon color="gray">
+              <mu-icon value="settings"></mu-icon>
+            </mu-button>
+          </div>
+        </div>
         <div>
           <div class="menu-header">
             <p>Outlook.com</p>
             <p>xinyan.zhang@live.com</p>
           </div>
           <div class="menu-content">
+            <p>{{folderTitle}}</p>
             <mu-list>
               <mu-list-item v-for="(fav, index) in this.favourites" :key="'favourite'+index" button>
                 <mu-list-item-action>
-                  <mu-icon value="inbox"></mu-icon>
+                  <mu-icon :value="fav.icon"></mu-icon>
                 </mu-list-item-action>
                 <mu-list-item-title>{{fav.name}}</mu-list-item-title>
               </mu-list-item>
             </mu-list>
-            <mu-divider shallow-inset></mu-divider>
+            <mu-divider shallow-inset v-if="this.favourites.length > 0"></mu-divider>
             <mu-list>
               <mu-list-item v-for="folder in this.folders" :key="'folder'+index" button>
                 <mu-list-item-action>
-                  <mu-icon value=folder.icon></mu-icon>
+                  <mu-icon :value="folder.icon"></mu-icon>
                 </mu-list-item-action>
                 <mu-list-item-title>{{folder.name}}</mu-list-item-title>
               </mu-list-item>
@@ -40,35 +61,40 @@
               docked:false,
               open: false,
               position: 'left',
-              favourites:[{
-                  name:"收件箱",
-                  icon:"inbox"
-              }],
+              favourites:[],
               folders:[{
                   name:"收件箱",
                   icon:"inbox"
               }, {
                   name:"已发送邮件",
-                  icon:"sent"
+                  icon:"send"
               }, {
                   name:"存档",
                   icon:"grade"
               }, {
                   name:"已删除邮件",
-                  icon:"inbox"
+                  icon:"restore_from_trash"
               }, {
                   name:"草稿",
                   icon:"drafts"
               }, {
                   name:"垃圾邮件",
-                  icon:"grade"
+                  icon:"work_off"
               }, {
                   name:"重要邮件箱",
-                  icon:"grade"
+                  icon:"folder_special"
               }, {
                   name:"Conversation History",
-                  icon:"grade"
+                  icon:"folder"
               }]
+          }
+      },
+      methods: {
+
+      },
+      computed: {
+          folderTitle() {
+              return this.favourites.length > 0 ? "收藏夹": "文件夹";
           }
       }
   }
@@ -81,6 +107,7 @@
     width: 64px;
     height: 100%;
     background: #DDD;
+    position: relative;
   }
 
   .menu-header {
@@ -98,7 +125,7 @@
     left: 64px;
     right: 0;
     bottom: 0;
-    overflow:auto;
+    overflow-y: visible;
     overflow-x: hidden;
   }
 
@@ -116,6 +143,20 @@
 
   .menu-header > p:last-of-type {
     font-size: 14px;
+  }
+
+  .menu-content > p {
+    text-align: left;
+    margin: 12px 12px 0 12px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .account-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
 </style>
